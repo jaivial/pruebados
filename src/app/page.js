@@ -1,4 +1,5 @@
 // pages/index.js
+"use client";
 import { useClient } from 'next/client'; // Correct import
 
 import NavBar from './components/navbar';
@@ -13,7 +14,6 @@ import GoogleReviews from './components/googlereviews';
 import './page.css';
 
 const HomePage = () => {
-  useClient(); // Add useClient hook if needed
 
   return (
     <div id='index'>

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import './navbar.css';
 import Link from 'next/link';
@@ -5,6 +6,7 @@ import Logo from '../../../public/assets/LogoNombre2.png';
 import Image from 'next/image';
 import Arrow from '../../../public/assets/arrow.svg';
 import ArrowRosa from '../../../public/assets/arrowrosa.svg';
+import { useClient } from 'next/client';
 
 const NavBar = () => {
     return (

@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from 'react';
 import './rectangulo2.css';
 import { motion, useAnimation } from 'framer-motion';
@@ -5,17 +6,21 @@ import Image from 'next/image';
 import SobreMiImage from '../../../public/assets/jaime.png';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { useClient } from 'next/client';
+import { isServer } from '../utils/isserver';
 
 
 const Rectangulo2 = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleScroll = () => {
+    const handleScroll = () => {
+      if (typeof window !== 'undefined') {
         setScrollY(window.scrollY);
-      };
+      }
+    };
 
+    if (typeof window !== 'undefined') {
       // Attach the event listener when the component mounts
       window.addEventListener('scroll', handleScroll);
 
@@ -24,7 +29,7 @@ const Rectangulo2 = () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }
-  }, []);
+  }, []); 
 
 
 

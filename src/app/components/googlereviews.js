@@ -1,7 +1,8 @@
-// Import necessary packages
+"use client";
 import { useEffect, useState } from 'react';
 import { GooglePlacesAutocomplete } from 'react-google-places-autocomplete';
 import './googlereviews.css';
+import { useClient } from 'next/client'; // Import useClient
 // Component
 const GoogleReviews = () => {
     const [placeDetails, setPlaceDetails] = useState(null);

@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import React from 'react';
 import './herosection.css';
 import { motion } from 'framer-motion';
 import ScaleImg from '../../../public/assets/scale1.jpeg';
 import Image from 'next/image';
+import { useClient } from 'next/client'; // Import useClient
 
 
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import './footer.css';
 import { useSpring, animated } from 'react-spring';
@@ -8,10 +9,11 @@ import WhatsappRosa from '../../../public/assets/whatsapprosa.png'
 import EmailRosa from '../../../public/assets/emailrosa.png'
 import InstagramRosa from '../../../public/assets/instagramrosa.png'
 import Link from 'next/link';
+import { useClient } from 'next/client';
+
 
 
 const Footer = () => {
-
 
 
     return (

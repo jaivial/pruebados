@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from 'react';
 import './sobremi.css';
 import { motion, useAnimation } from 'framer-motion';
@@ -6,32 +7,31 @@ import SobreMiImage from '../../../public/assets/guilleportada.png';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import Rectangulo2 from './rectangulo2';
+import { useClient } from 'next/client';
 
 const SobreMi = () => {
     const [scrollY, setScrollY] = useState(0);
-
+  
     useEffect(() => {
+      const handleScroll = () => {
         if (typeof window !== 'undefined') {
-            const handleScroll = () => {
-                setScrollY(window.scrollY);
-            };
-
-            window.addEventListener('scroll', handleScroll);
-
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
+          setScrollY(window.scrollY);
         }
+      };
+  
+      if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', handleScroll);
+  
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
     }, []);
-
-
-
-
+  
     const { transform } = useSpring({
-        transform: `translateX(${scrollY * 0.08}px)`,
-
+      transform: `translateX(${scrollY * 0.08}px)`,
     });
-
+  
 
 
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import './contactform.css';
 import { useSpring, animated } from 'react-spring';

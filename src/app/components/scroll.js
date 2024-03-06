@@ -1,36 +1,32 @@
-// ScrollAnimation.js
-
+"use client";
 import { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styles from './scroll.css';
+import { useClient } from 'next/client';
 
 const ScrollAnimation = () => {
-
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleScroll = () => {
+    const handleScroll = () => {
+      if (typeof window !== 'undefined') {
         setScrollY(window.scrollY);
-      };
+      }
+    };
 
-      // Attach the event listener when the component mounts
+    if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
 
-      // Detach the event listener when the component unmounts
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }
   }, []);
 
-
-
-
   const { transform } = useSpring({
     transform: `translateY(${-scrollY * 0.5}px)`, // Updated to Y-axis
-
   });
+
 
   return (
     <div className='container'>

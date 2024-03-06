@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
 import './serviciosindex.css';
 import { motion, useAnimation } from 'framer-motion';
@@ -10,6 +11,7 @@ import { useInView } from 'react-intersection-observer';
 import Icon1 from '../../../public/assets/icon1.png';
 import Icon2 from '../../../public/assets/icon2.png';
 import Icon3 from '../../../public/assets/icon3.png';
+import { useClient } from 'next/client';
 
 const ServiciosIndex = () => {
 

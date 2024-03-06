@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
 import './contactoindex.css';
 import { motion, useAnimation } from 'framer-motion';
@@ -12,10 +13,10 @@ import DottedLine from '../../../public/assets/dottedline.png';
 import ArrowGif from '../../../public/assets/arrowgif.gif';
 import Link from 'next/link';
 import WhatsappIconGreen from '../../../public/assets/whatsappicongreen.png';
+import { useClient } from 'next/client';
 
 
 const ContactoIndex = () => {
-
 
 
 
