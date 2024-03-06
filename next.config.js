@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
-    
+  outDir: "export", // Corrected property name
+  experimental: {
+    images: true, // or any other experimental features
+  },
 };
 
 module.exports = nextConfig;
