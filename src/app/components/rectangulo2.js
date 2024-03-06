@@ -20,16 +20,13 @@ const Rectangulo2 = () => {
       }
     };
 
-    if (typeof window !== 'undefined') {
-      // Attach the event listener when the component mounts
-      window.addEventListener('scroll', handleScroll);
+   // Add event listener when the component is mounted
+   document.addEventListener('scroll', handleScroll);
 
-      // Detach the event listener when the component unmounts
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, []); 
+   return () => {
+    document.removeEventListener('scroll', handleScroll);
+  };},
+     []); 
 
 
 

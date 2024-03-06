@@ -1,10 +1,8 @@
-"use client";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import styles from './scroll.css';
-import { useClient } from 'next/client';
+import './scroll.css'; // Corrected the import statement for styles
 
-const ScrollAnimation = () => {
+const OuterComponent = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -14,21 +12,20 @@ const ScrollAnimation = () => {
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
+    // Add event listener when the component is mounted
+    document.addEventListener('scroll', handleScroll);
 
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, []);
+    // Remove event listener when the component is unmounted
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once (on mount)
 
   const { transform } = useSpring({
-    transform: `translateY(${-scrollY * 0.5}px)`, // Updated to Y-axis
+    transform: `translateY(${-scrollY * 0.5}px)`,
   });
 
-
-  return (
+  const ScrollAnimation = () => (
     <div className='container'>
       <animated.div
         className='rectangle'
@@ -40,6 +37,8 @@ const ScrollAnimation = () => {
       </div>
     </div>
   );
+
+  return <ScrollAnimation />;
 };
 
-export default ScrollAnimation;
+export default OuterComponent;

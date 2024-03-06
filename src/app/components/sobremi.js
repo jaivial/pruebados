@@ -13,19 +13,19 @@ const SobreMi = () => {
     const [scrollY, setScrollY] = useState(0);
   
     useEffect(() => {
-      const handleScroll = () => {
-        if (typeof window !== 'undefined') {
-          setScrollY(window.scrollY);
-        }
-      };
+        const handleScroll = () => {
+          if (typeof window !== 'undefined') {
+            setScrollY(window.scrollY);
+          }
+        };
   
-      if (typeof window !== 'undefined') {
-        window.addEventListener('scroll', handleScroll);
+     
+       // Add event listener when the component is mounted
+    document.addEventListener('scroll', handleScroll);
   
         return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }
+            document.removeEventListener('scroll', handleScroll);        };
+      
     }, []);
   
     const { transform } = useSpring({
