@@ -13,7 +13,7 @@ app.use(express.json());
 
 // CORS Configuration
 const corsOptions = {
-  origin: 'http://localhost:3001', // Replace with your frontend domain
+  origin: 'http://localhost:3003', // Replace with your frontend domain
   methods: 'POST',
   optionsSuccessStatus: 200,
 };
