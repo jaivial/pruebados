@@ -11,27 +11,26 @@ import { useClient } from 'next/client';
 
 const SobreMi = () => {
     const [scrollY, setScrollY] = useState(0);
-  
     useEffect(() => {
         const handleScroll = () => {
-          if (typeof window !== 'undefined') {
             setScrollY(window.scrollY);
-          }
         };
-  
-     
-       // Add event listener when the component is mounted
-    document.addEventListener('scroll', handleScroll);
-  
-        return () => {
-            document.removeEventListener('scroll', handleScroll);        };
-      
+
+        if (typeof window !== 'undefined') {
+            // Add event listener only on the client side
+            window.addEventListener('scroll', handleScroll);
+
+            // Remove event listener when the component is unmounted
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     }, []);
-  
+
     const { transform } = useSpring({
-      transform: `translateX(${scrollY * 0.08}px)`,
+        transform: `translateX(${scrollY * 0.08}px)`,
     });
-  
+
 
 
 

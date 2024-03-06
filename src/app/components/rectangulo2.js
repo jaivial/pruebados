@@ -15,18 +15,19 @@ const Rectangulo2 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== 'undefined') {
-        setScrollY(window.scrollY);
-      }
+      setScrollY(window.scrollY);
     };
 
-   // Add event listener when the component is mounted
-   document.addEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      // Add event listener only on the client side
+      window.addEventListener('scroll', handleScroll);
 
-   return () => {
-    document.removeEventListener('scroll', handleScroll);
-  };},
-     []); 
+      // Remove event listener when the component is unmounted
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
 
 
 

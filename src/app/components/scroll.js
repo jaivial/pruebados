@@ -7,19 +7,19 @@ const OuterComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== 'undefined') {
-        setScrollY(window.scrollY);
-      }
+      setScrollY(window.scrollY);
     };
 
-    // Add event listener when the component is mounted
-    document.addEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      // Add event listener only on the client side
+      window.addEventListener('scroll', handleScroll);
 
-    // Remove event listener when the component is unmounted
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once (on mount)
+      // Remove event listener when the component is unmounted
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
 
   const { transform } = useSpring({
     transform: `translateY(${-scrollY * 0.5}px)`,
