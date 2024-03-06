@@ -6,26 +6,30 @@ import Image from 'next/image';
 import SobreMiImage from '../../../public/assets/guilleportada.png';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import Rectangulo2 from './rectangulo2';
+import dynamic from 'next/dynamic'
+// import Rectangulo2 from './rectangulo2';
 import { useClient } from 'next/client';
+const Rectangulo2 = dynamic(() => import('./rectangulo2'), {
+    loading: () => <p>Loading...</p>,
+  })
 
 const SobreMi = () => {
     const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
         const handleScroll = () => {
+          if (typeof window !== 'undefined') {
             setScrollY(window.scrollY);
+          }
         };
-
+    
         if (typeof window !== 'undefined') {
-            // Add event listener only on the client side
-            window.addEventListener('scroll', handleScroll);
-
-            // Remove event listener when the component is unmounted
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
+          window.addEventListener('scroll', handleScroll);
+    
+          return () => {
+            window.removeEventListener('scroll', handleScroll);
+          };
         }
-    }, []);
+      }, []);
 
     const { transform } = useSpring({
         transform: `translateX(${scrollY * 0.08}px)`,

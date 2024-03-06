@@ -7,14 +7,14 @@ const OuterComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (typeof window !== 'undefined') {
+        setScrollY(window.scrollY);
+      }
     };
 
     if (typeof window !== 'undefined') {
-      // Add event listener only on the client side
       window.addEventListener('scroll', handleScroll);
 
-      // Remove event listener when the component is unmounted
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
