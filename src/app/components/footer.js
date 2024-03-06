@@ -17,7 +17,7 @@ const Footer = () => {
     return (
         <footer className='footerwrapper'>
             <div className="footer1">
-                <Image src={Isotipo}></Image>
+                <Image src={Isotipo} alt='Guillermo Fernández dietista nutricionista en Valencia'></Image>
                 <h3>Guillermo Fernández de la Torre</h3>
                 <div className="parrafowrapper">
                     <p style={{ fontStyle: 'italic' }}>Transforma tu vida bocado a bocado.
@@ -29,17 +29,17 @@ const Footer = () => {
                 <div className="contactlistwrapper">
                     <Link href={"https://wa.me/34692747052"}>
                         <div className="iconoswrapper">
-                            <Image src={WhatsappRosa}></Image> 692747052
+                            <Image src={WhatsappRosa} alt='Guillermo Fernández dietista nutricionista en Valencia'></Image> 692747052
                         </div>
                     </Link>
                     <Link href={'mailto:jaimebillanueba@gmail.com'}>
                         <div className="iconoswrapper">
-                            <Image src={EmailRosa}></Image> jaimebillanueba99@gmail.com
+                            <Image src={EmailRosa} alt='Guillermo Fernández dietista nutricionista en Valencia'></Image> jaimebillanueba99@gmail.com
                         </div>
                     </Link>
                     <Link href={'https://www.instagram.com/jaimevillalcon/'}>
                         <div className="iconoswrapper">
-                            <Image src={InstagramRosa}></Image> @jaimevillalcon
+                            <Image src={InstagramRosa} alt='Guillermo Fernández dietista nutricionista en Valencia'></Image> @jaimevillalcon
                         </div>
                     </Link>
                 </div>

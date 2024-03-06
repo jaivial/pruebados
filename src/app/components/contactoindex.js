@@ -30,7 +30,8 @@ const ContactoIndex = () => {
 
             <Image
                 src={DottedLine}
-                className='dottedline'>
+                className='dottedline'
+                alt='Guillermo Fernández dietista nutricionista en Valencia'>
             </Image>
 
 
@@ -40,6 +41,7 @@ const ContactoIndex = () => {
                     <Image
                         src={ArrowGif}
                         className='arrowgif'
+                        alt='Guillermo Fernández dietista nutricionista en Valencia'
                     >
                     </Image>
                     <Link
@@ -47,11 +49,13 @@ const ContactoIndex = () => {
                         <Image
                             src={WhatsappIcon}
                             className='whatsappiconcontacto'
+                            alt='Guillermo Fernández dietista nutricionista en Valencia'
                         >
                         </Image>
                         <Image
                             src={WhatsappIconGreen}
                             className='whatsappiconcontactogreen'
+                            alt='Guillermo Fernández dietista nutricionista en Valencia'
                         >
                         </Image>
                     </Link>

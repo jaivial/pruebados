@@ -14,6 +14,7 @@ const NavBar = () => {
                     <Image
                         src={Logo}
                         className='logonavbar'
+                        alt='Guillermo Fernández dietista nutricionista en Valencia'
                     >
 
                     </Image>
@@ -26,8 +27,8 @@ const NavBar = () => {
                        
                         <div className="dropdown">
                             <span>Servicios</span>
-                            <Image src={Arrow} className='arrownegra'></Image>
-                            <Image src={ArrowRosa} className='arrowrosa'></Image>
+                            <Image src={Arrow} className='arrownegra' alt='Guillermo Fernández dietista nutricionista en Valencia'></Image>
+                            <Image src={ArrowRosa} className='arrowrosa' alt='Guillermo Fernández dietista nutricionista en Valencia'></Image>
                             <div className="dropdown-content">
                                 <Link href="/nutricion-deportiva">Nutrición Deportiva</Link>
                                 <Link href="/nutricion-clinica">Nutrición Clínica</Link>

@@ -49,6 +49,7 @@ const ServiciosIndex = () => {
                     <Image
                         className='imageservicios'
                         src={Icon1}
+                        alt='Guillermo Fernández dietista nutricionista en Valencia'
                     />
                     <div className="textorectangulowrapper">
                         <h3>Nutrición Clínica</h3>
@@ -65,6 +66,7 @@ const ServiciosIndex = () => {
                     <Image
                         className='imageservicios'
                         src={Icon3}
+                        alt='Guillermo Fernández dietista nutricionista en Valencia'
                     />
                     <div className="textorectangulowrapper">
                         <h3>Nutrición Deportiva</h3>
@@ -81,6 +83,7 @@ const ServiciosIndex = () => {
                     <Image
                         className='imageservicios'
                         src={Icon2}
+                        alt='Guillermo Fernández dietista nutricionista en Valencia'
                     />
                     <div className="textorectangulowrapper">
                         <h3>Pérdida De Peso</h3>

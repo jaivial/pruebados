@@ -59,7 +59,7 @@ const SobreMi = () => {
                         style={{ transform }}>
                     </animated.div>
                     <Rectangulo2 />
-                    <Image src={SobreMiImage} className='sobremiimagenperfil' />
+                    <Image src={SobreMiImage} className='sobremiimagenperfil' alt='Guillermo Fernández dietista nutricionista en Valencia' />
                 </div>
             </div>
 
