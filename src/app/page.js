@@ -1,6 +1,6 @@
-// pages/index.js (or your other page file)
-'use client'
-import { useClient } from 'next/client';
+// pages/index.js
+import { useClient } from 'next/client'; // Correct import
+
 import NavBar from './components/navbar';
 import HeroSection from './components/herosection';
 import SobreMi from './components/sobremi';
@@ -13,8 +13,7 @@ import GoogleReviews from './components/googlereviews';
 import './page.css';
 
 const HomePage = () => {
-  // Wrap your component with useClient to mark it as a Client Component
-
+  useClient(); // Add useClient hook if needed
 
   return (
     <div id='index'>
@@ -26,8 +25,6 @@ const HomePage = () => {
       <GoogleReviews />
       <ContactoIndex />
       <Footer />
-
-     
     </div>
   );
 };
