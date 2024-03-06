@@ -10,7 +10,7 @@ import ContactoIndex from './components/contactoindex';
 import Footer from './components/footer';
 import GoogleReviews from './components/googlereviews';
 const SobreMi = dynamic(() => import('./components/sobremi'), {
-  loading: () => <p>Loading...</p>,
+  ssr: false,
 })
 
 import './page.css';
