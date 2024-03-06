@@ -6,30 +6,30 @@ import styles from './scroll.css';
 
 const ScrollAnimation = () => {
 
-
   const [scrollY, setScrollY] = useState(0);
 
-  if (typeof window !== 'undefined') {
-    // Your client-side code that uses window or location
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       const handleScroll = () => {
         setScrollY(window.scrollY);
       };
-  
+
+      // Attach the event listener when the component mounts
       window.addEventListener('scroll', handleScroll);
-  
+
+      // Detach the event listener when the component unmounts
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-    }, []);
-  
-  }
-  
+    }
+  }, []);
 
-  
+
+
+
   const { transform } = useSpring({
     transform: `translateY(${-scrollY * 0.5}px)`, // Updated to Y-axis
-    
+
   });
 
   return (

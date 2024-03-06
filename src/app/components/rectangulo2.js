@@ -8,41 +8,42 @@ import { useSpring, animated } from 'react-spring';
 
 
 const Rectangulo2 = () => {
-    const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
+  useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Your client-side code that uses window or location
-      useEffect(() => {
-        const handleScroll = () => {
-          setScrollY(window.scrollY);
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
+
+      // Attach the event listener when the component mounts
+      window.addEventListener('scroll', handleScroll);
+
+      // Detach the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
-    
-  
-    
-  
-    const { transform } = useSpring({
-        transform: `translate(${scrollY * 0.16}px, ${-scrollY * 0.06}px)`      
-    });
-      
-  
+  }, []);
 
-    return (
-        
-                <animated.div
-                    className='rectangulo2'
-                    style={{ transform }}            >
-                </animated.div>
-              
 
-    );
+
+
+  const { transform } = useSpring({
+    transform: `translate(${scrollY * 0.16}px, ${-scrollY * 0.06}px)`
+  });
+
+
+
+  return (
+
+    <animated.div
+      className='rectangulo2'
+      style={{ transform }}            >
+    </animated.div>
+
+
+  );
 };
 
 export default Rectangulo2;
