@@ -1,0 +1,9 @@
+#index {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+

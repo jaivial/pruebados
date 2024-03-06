@@ -1,0 +1,117 @@
+.footerwrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+    height: auto;
+
+}
+
+.footer1 {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer1 img {
+    width: 90px;
+}
+
+.footer1 h3 {
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.parrafowrapper {
+    width: 30%;
+}
+
+.parrafowrapper p {
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 200;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.linea {
+    margin-top: 40px;
+    width: 250px;
+    height: 6px;
+    background-color: rgb(242, 120, 109);
+    border-radius: 30px;
+}
+
+.contactlistwrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    gap: 25px;
+}
+
+.iconoswrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconoswrapper img {
+    width: 35px;
+}
+
+.footer2 {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer2textowrapper p {
+    color: white;
+    font-size: 14px;
+    font-family: 'Montserrat';
+}
+
+.footer2textowrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    align-items: center;
+    gap: 20px;
+    margin: 0 10px;
+}
+
+.footer2textowrapper a {
+    color: white;
+    gap: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat';
+}
+
+.footer2textowrapper a:hover {
+    color: #f2786d;
+    border-bottom: #f2786d 1px solid;
+}

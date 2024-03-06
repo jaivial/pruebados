@@ -1,0 +1,245 @@
+/* components/navbar.module.css */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.rightsidenavbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5rem;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+    padding: 1.2rem;
+}
+
+.logo img {
+    height: 100%;
+   
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.links a {
+    position: relative;
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.links a:hover {
+    color: #F37D73;
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+.links a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Set the thickness of the underline */
+    background-color: #F37D73;
+    transform: scaleX(0);
+    /* Initially hide the underline */
+    transition: transform 0.4s ease;
+    /* Add a smooth transition */
+}
+
+.links a:hover::after {
+    transform: scaleX(1);
+    /* Show the underline on hover */
+}
+
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.dropdown img {
+    transform: rotate(90deg);
+    width: 17px;
+}
+
+.arrowrosa {
+    display: none;
+}
+
+
+
+.dropdown span {
+    color: black;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.dropdown:hover span {
+    color: #F37D73;
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+.dropdown span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Set the thickness of the underline */
+    background-color: #F37D73;
+    transform: scaleX(0);
+    /* Initially hide the underline */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.dropdown:hover span::after {
+    transform: scaleX(1);
+    /* Show the underline on hover */
+}
+
+.dropdown:hover {
+    color: #F37D73;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown:hover .arrownegra {
+    display: none;
+}
+
+.dropdown:hover .arrowrosa{
+    display: flex;
+}
+
+.dropdown:hover::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Set the thickness of the underline */
+    background-color: #F37D73;
+    transform: scaleX(0);
+    /* Initially hide the underline */
+    transition: transform 0.4s ease;
+    /* Add a smooth transition */
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: -55%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0rem;
+    color: black;
+    width: auto;
+    transition: opacity 2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-top: -5px;
+    
+}
+
+
+
+.dropdown-content a {
+    color: black;
+    width: 250px;
+    padding: 1rem;
+}
+
+
+.dropdown-content a:hover {
+    color: #F37D73;
+    width: 250px;
+    background-color: antiquewhite;
+
+}
+.appointment-button {
+    position: relative;
+    padding: 1rem;
+    background-color: #F37D73;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+}
+
+.appointment-button:hover {
+    transform: scale(1.1) rotate(0deg); /* Increase size and add slight rotation on hover */
+    box-shadow: 0 0 20px rgba(254, 249, 249, 0.5); /* Increase shadow size on hover */
+}
+
+.appointment-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shinyAnimation 2.5s infinite;
+}
+
+@keyframes shinyAnimation {
+    to {
+        left: 100%;
+    }
+}
+
+.logonavbar {
+    width: 100%;
+    height: 100px;
+}
+
