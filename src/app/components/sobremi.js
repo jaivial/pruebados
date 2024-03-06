@@ -10,17 +10,23 @@ import Rectangulo2 from './rectangulo2';
 const SobreMi = () => {
     const [scrollY, setScrollY] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
+    if (typeof window !== 'undefined') {
+        // Your client-side code that uses window or location
+        useEffect(() => {
+            const handleScroll = () => {
+                setScrollY(window.scrollY);
+            };
+    
+            window.addEventListener('scroll', handleScroll);
+    
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+      }
+      
 
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+   
 
     const { transform } = useSpring({
         transform: `translateX(${scrollY * 0.08}px)`,

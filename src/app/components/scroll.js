@@ -5,20 +5,28 @@ import { useSpring, animated } from 'react-spring';
 import styles from './scroll.css';
 
 const ScrollAnimation = () => {
+
+
   const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  if (typeof window !== 'undefined') {
+    // Your client-side code that uses window or location
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+  
+  }
+  
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+  
   const { transform } = useSpring({
     transform: `translateY(${-scrollY * 0.5}px)`, // Updated to Y-axis
     
