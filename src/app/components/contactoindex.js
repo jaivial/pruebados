@@ -6,7 +6,6 @@ import Image from 'next/image';
 import WhatsappIcon from '../../../public/assets/whatsappicon.png';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import Rectangulo2 from './rectangulo2';
 import { useInView } from 'react-intersection-observer';
 import ContactForm from './contactform';
 import DottedLine from '../../../public/assets/dottedline.png';

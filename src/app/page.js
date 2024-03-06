@@ -1,6 +1,3 @@
-// pages/index.js
-"use client";
-import { useClient } from 'next/client'; // Correct import
 import dynamic from 'next/dynamic'
 import NavBar from './components/navbar';
 import HeroSection from './components/herosection';
@@ -9,9 +6,8 @@ import ServiciosIndex from './components/serviciosindex';
 import ContactoIndex from './components/contactoindex';
 import Footer from './components/footer';
 import GoogleReviews from './components/googlereviews';
-const SobreMi = dynamic(() => import('./components/sobremi'), {
-  ssr: false,
-})
+
+
 
 import './page.css';
 
@@ -21,7 +17,6 @@ const HomePage = () => {
     <div id='index'>
       <NavBar />
       <HeroSection />
-      <SobreMi />
       <ServiciosIndex />
       <GoogleReviews />
       <ContactoIndex />
