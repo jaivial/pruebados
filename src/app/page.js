@@ -30,6 +30,7 @@ import ArrowGif from '../../public/assets/arrowgif.gif';
 import WhatsappIconGreen from '../../public/assets/whatsappicongreen.png';
 import WhatsappIcon from '../../public/assets/whatsappicon.png';
 import './components/contactoindex.css';
+import './components/footer.css';
 
 
 import Isotipo from '../../public/assets/ISOTIPO.png'
