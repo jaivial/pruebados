@@ -1,16 +1,16 @@
-import React from 'react';
-import './navbar.css';
-import Link from 'next/link';
+import React from "react"
+import "./news.css";
+import Link from "next/link";
+import Image from "next/image";
 import Logo from '../../../public/assets/LogoNombre2.png';
-import Image from 'next/image';
 import Arrow from '../../../public/assets/arrow.svg';
 import ArrowRosa from '../../../public/assets/arrowrosa.svg';
-import { useClient } from 'next/client';
 
-const NavBar = () => {
+
+export default function News() {
     return (
-        
-            <nav className="navbar">
+        <main>
+             <nav className="navbar">
                 <div className="logo">
                     <Image
                         src={Logo}
@@ -23,8 +23,8 @@ const NavBar = () => {
                 <div className='rightsidenavbar'>
 
                     <div className="links">
-                        <Link href="/">Inicio</Link>
-                        <Link href="/sobre-mi">Sobre mí</Link>
+                        <Link href="#">Inicio</Link>
+                        <Link href="#">Sobre mí</Link>
                        
                         <div className="dropdown">
                             <span>Servicios</span>
@@ -36,12 +36,11 @@ const NavBar = () => {
                                 <Link href="/perdida-de-peso">Pérdida de Peso</Link>
                             </div>
                         </div>
-                        <Link href="/sobre-mi">Contacto</Link>
+                        <Link href="#">Contacto</Link>
                     </div>
                     <div className="appointment-button">Pide tu Cita</div>
                 </div>
             </nav>
-    );
-};
-
-export default NavBar;
+        </main>
+    )
+}

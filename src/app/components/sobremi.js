@@ -11,41 +11,29 @@ import dynamic from 'next/dynamic'
 import { useClient } from 'next/client';
 
 
-const Rectangulo2 = dynamic(()=>{return import('./rectangulo2')}, {ssr: false});
+const Rectangulo2 = dynamic(() => { return import('./rectangulo2') }, { ssr: false });
 
 
 const SobreMi = () => {
-    const runOnClient = (func) => {
-        if (typeof window !== "undefined") {
-            if (window.document.readyState == "loading") {
-                window.addEventListener("load", func);
-            } else {
-                func();
-            }
-        }
-    };
-    
 
 
-    
+
+
+
     const [scrollY, setScrollY] = useState(0);
+
     useEffect(() => {
         runOnClient(() => {
             const handleScroll = () => {
-                if (typeof window !== 'undefined') {
-                    setScrollY(window.scrollY);
-                }
+                setScrollY(window.scrollY);
             };
-    
-            if (typeof window !== 'undefined') {
-                window.addEventListener('scroll', handleScroll);
-    
-                return () => {
-                    window.removeEventListener('scroll', handleScroll);
-                };
-            }
-            // access window as you like
-            })
+
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+
+        })
     }, []);
 
     const { transform } = useSpring({

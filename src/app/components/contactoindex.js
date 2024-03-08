@@ -13,6 +13,7 @@ import ArrowGif from '../../../public/assets/arrowgif.gif';
 import Link from 'next/link';
 import WhatsappIconGreen from '../../../public/assets/whatsappicongreen.png';
 import { useClient } from 'next/client';
+import './contactform.css';
 
 
 const ContactoIndex = () => {
@@ -26,7 +27,7 @@ const ContactoIndex = () => {
                 <h3>¿Preparado para iniciar tu viaje hacia una salud y nutrición optimizadas?</h3>
             </div>
 
-            <ContactForm />
+        <ContactForm />
 
             <Image
                 src={DottedLine}
