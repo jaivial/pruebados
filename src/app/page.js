@@ -140,12 +140,12 @@ const HomePage = () => {
               <Image src={Arrow} className='arrownegra' alt='Guillermo Fernández dietista nutricionista en Valencia'></Image>
               <Image src={ArrowRosa} className='arrowrosa' alt='Guillermo Fernández dietista nutricionista en Valencia'></Image>
               <div className="dropdown-content">
-                <Link href="/nutricion-deportiva">Nutrición Deportiva</Link>
-                <Link href="/nutricion-clinica">Nutrición Clínica</Link>
-                <Link href="/perdida-de-peso">Pérdida de Peso</Link>
+                <Link href="#">Nutrición Deportiva</Link>
+                <Link href="#">Nutrición Clínica</Link>
+                <Link href="#">Pérdida de Peso</Link>
               </div>
             </div>
-            <Link href="/sobre-mi">Contacto</Link>
+            <Link href="#">Contacto</Link>
           </div>
           <div className="appointment-button">Pide tu Cita</div>
         </div>
